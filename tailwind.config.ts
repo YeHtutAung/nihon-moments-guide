@@ -83,6 +83,7 @@ export default {
 			},
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
+				myanmar: ['Noto Sans Myanmar', 'system-ui', 'sans-serif'],
 			},
 			keyframes: {
 				'accordion-down': {

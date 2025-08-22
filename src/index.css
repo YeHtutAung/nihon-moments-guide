@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Myanmar fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;500;600;700&display=swap');
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
@@ -47,7 +50,7 @@ All colors MUST be HSL.
     /* Gradients */
     --gradient-cherry: linear-gradient(135deg, hsl(345 60% 88%), hsl(355 50% 85%));
     --gradient-mountain: linear-gradient(180deg, hsl(220 20% 95%), hsl(345 20% 98%));
-    --gradient-hero: linear-gradient(135deg, hsl(355 70% 45% / 0.9), hsl(345 60% 50% / 0.8));
+    --gradient-hero: linear-gradient(135deg, hsla(0, 76%, 72%, 0.9), hsla(197, 63%, 41%, 0.8));
     
     /* Shadows */
     --shadow-soft: 0 4px 20px hsl(355 30% 60% / 0.1);
@@ -120,6 +123,11 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  /* Myanmar language font support */
+  body[data-lang="my"] {
+    font-family: 'Noto Sans Myanmar', system-ui, sans-serif;
   }
   
   /* Custom animations */

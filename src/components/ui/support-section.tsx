@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useTranslation } from "react-i18next";
 import { Users, Heart, Globe } from "lucide-react";
 import student1 from "@/assets/students/student-1.jpg";
 import student2 from "@/assets/students/student-2.jpg";
@@ -8,75 +9,75 @@ import student4 from "@/assets/students/student-4.jpg";
 import student5 from "@/assets/students/student-5.jpg";
 import student6 from "@/assets/students/student-6.jpg";
 
-const supportFeatures = [
-  {
-    icon: Users,
-    title: "Personalized Attention",
-    description: "Every student receives individual attention tailored to their unique goals and circumstances. Our dedicated counselors work closely with you to create a personalized roadmap to success."
-  },
-  {
-    icon: Heart,
-    title: "Success Stories",
-    description: "Join hundreds of successful students who have achieved their dreams through our guidance. Their stories inspire us and prove that with the right support, anything is possible."
-  },
-  {
-    icon: Globe,
-    title: "Strong Local Network",
-    description: "Our established partnerships with Japanese institutions and local contacts ensure you have support even before you arrive in Japan. You're never alone in this journey."
-  }
-];
-
-const successfulStudents = [
-  {
-    image: student1,
-    name: "Sakura Tanaka",
-    university: "Tokyo University",
-    program: "Computer Science"
-  },
-  {
-    image: student2,
-    name: "Michael Chen",
-    university: "Waseda University",
-    program: "International Relations"
-  },
-  {
-    image: student3,
-    name: "Emily Rodriguez",
-    university: "Keio University",
-    program: "Business Administration"
-  },
-  {
-    image: student4,
-    name: "David Kim",
-    university: "Osaka University",
-    program: "Engineering"
-  },
-  {
-    image: student5,
-    name: "Anna Sato",
-    university: "Kyoto University",
-    program: "Cultural Studies"
-  },
-  {
-    image: student6,
-    name: "James Wilson",
-    university: "Sophia University",
-    program: "Japanese Literature"
-  }
-];
-
 export const SupportSection = () => {
+  const { t } = useTranslation();
+
+  const supportFeatures = [
+    {
+      icon: Users,
+      title: t('support.personalized.title'),
+      description: t('support.personalized.description')
+    },
+    {
+      icon: Heart,
+      title: t('support.proven.title'),
+      description: t('support.proven.description')
+    },
+    {
+      icon: Globe,
+      title: "Strong Local Network",
+      description: "Our established partnerships with Japanese institutions and local contacts ensure you have support even before you arrive in Japan. You're never alone in this journey."
+    }
+  ];
+
+  const successfulStudents = [
+    {
+      image: student1,
+      name: "Sakura Tanaka",
+      university: "Tokyo University",
+      program: "Computer Science"
+    },
+    {
+      image: student2,
+      name: "Michael Chen",
+      university: "Waseda University",
+      program: "International Relations"
+    },
+    {
+      image: student3,
+      name: "Emily Rodriguez",
+      university: "Keio University",
+      program: "Business Administration"
+    },
+    {
+      image: student4,
+      name: "David Kim",
+      university: "Osaka University",
+      program: "Engineering"
+    },
+    {
+      image: student5,
+      name: "Anna Sato",
+      university: "Kyoto University",
+      program: "Cultural Studies"
+    },
+    {
+      image: student6,
+      name: "James Wilson",
+      university: "Sophia University",
+      program: "Japanese Literature"
+    }
+  ];
+
   return (
     <section className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-mountain-gray mb-6">
-            Personalized Support & 
-            <span className="text-primary block">Success Stories</span>
+            {t('support.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            At Nihon Moments, we believe every student deserves dedicated support and guidance. 
-            Our student-focused approach and welcoming community ensure you feel supported every step of the way.
+            {t('support.subtitle')}
           </p>
         </div>
         

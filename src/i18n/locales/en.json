@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "title": "Your Journey to",
+    "subtitle": "Japan Begins Here",
+    "description": "Nihon Moments is your trusted partner in making your dream of studying in Japan a reality. We guide you through every step of the journey, from application to arrival, with personalized support and expert guidance.",
+    "startJourney": "Start Your Journey",
+    "learnMore": "Learn More"
+  },
+  "services": {
+    "title": "Our Core Services",
+    "subtitle": "We make the process of studying in Japan smooth and stress-free, providing comprehensive support at every stage of your journey.",
+    "applicationGuidance": {
+      "title": "Application Guidance",
+      "description": "Navigate the complex application process with our expert guidance. We help you prepare all necessary documents, meet deadlines, and present your best self to Japanese institutions."
+    },
+    "coe": {
+      "title": "Certificate of Eligibility (COE)",
+      "description": "We streamline the COE application process, handling all the paperwork and coordination with Japanese immigration authorities to ensure a smooth and successful application."
+    },
+    "interviewPrep": {
+      "title": "Interview Preparation",
+      "description": "Build confidence with our comprehensive interview coaching. We provide mock interviews, cultural insights, and personalized feedback to help you excel in your admissions interviews."
+    }
+  },
+  "support": {
+    "title": "Why Choose Nihon Moments?",
+    "subtitle": "We're not just consultants; we're your partners in success. Our comprehensive approach ensures you have everything you need to thrive in Japan.",
+    "personalized": {
+      "title": "Personalized Approach",
+      "description": "Every student receives individual attention tailored to their unique goals and circumstances. Our dedicated counselors work closely with you to create a personalized roadmap to success."
+    },
+    "proven": {
+      "title": "Proven Success",
+      "description": "Join hundreds of successful students who have achieved their dreams through our guidance. Their stories inspire us and prove that with the right support, anything is possible."
+    }
+  },
+  "whyChoose": {
+    "title": "Why Students Choose Us",
+    "subtitle": "Our commitment to excellence and personalized care sets us apart from the rest.",
+    "expertise": {
+      "title": "Expert Guidance",
+      "description": "Individual guidance tailored to your unique goals and dreams"
+    },
+    "success": {
+      "title": "Proven Success",
+      "description": "Hundreds of students successfully placed in top Japanese institutions"
+    }
+  },
+  "cta": {
+    "title": "Ready to Start Your Japanese Journey?",
+    "subtitle": "Take the first step towards your dream of studying in Japan. Our team is ready to guide you through every step of the process.",
+    "getStarted": "Get Started Today",
+    "contactUs": "Contact Us"
+  },
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "© 2024 Nihon Moments. All rights reserved.",
+    "madeWith": "Made with ❤️ in Japan"
+  }
+}

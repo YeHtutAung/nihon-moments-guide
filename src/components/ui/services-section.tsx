@@ -1,35 +1,37 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 import { FileText, Award, MessageSquare } from "lucide-react";
 
-const services = [
-  {
-    icon: FileText,
-    title: "Application Guidance",
-    description: "Navigate the complex application process with our expert guidance. We help you prepare all necessary documents, meet deadlines, and present your best self to Japanese institutions."
-  },
-  {
-    icon: Award,
-    title: "Certificate of Eligibility (COE)",
-    description: "We streamline the COE application process, handling all the paperwork and coordination with Japanese immigration authorities to ensure a smooth and successful application."
-  },
-  {
-    icon: MessageSquare,
-    title: "Interview Preparation",
-    description: "Build confidence with our comprehensive interview coaching. We provide mock interviews, cultural insights, and personalized feedback to help you excel in your admissions interviews."
-  }
-];
-
 export const ServicesSection = () => {
+  const { t } = useTranslation();
+
+  const services = [
+    {
+      icon: FileText,
+      title: t('services.applicationGuidance.title'),
+      description: t('services.applicationGuidance.description')
+    },
+    {
+      icon: Award,
+      title: t('services.coe.title'),
+      description: t('services.coe.description')
+    },
+    {
+      icon: MessageSquare,
+      title: t('services.interviewPrep.title'),
+      description: t('services.interviewPrep.description')
+    }
+  ];
+
   return (
     <section className="py-20 bg-gradient-mountain">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-mountain-gray mb-6">
-            Our Core Services
+            {t('services.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We make the process of studying in Japan smooth and stress-free, providing comprehensive 
-            support at every stage of your journey.
+            {t('services.subtitle')}
           </p>
         </div>
         

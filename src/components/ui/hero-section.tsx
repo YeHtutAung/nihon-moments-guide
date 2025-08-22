@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 import heroImage from "@/assets/hero-japan.jpg";
 
 export const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -15,22 +18,20 @@ export const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6 animate-fade-up">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          Your Journey to
-          <span className="block text-cherry-blossom">Japan Begins Here</span>
+          {t('hero.title')}
+          <span className="block text-cherry-blossom">{t('hero.subtitle')}</span>
         </h1>
         
         <p className="text-xl md:text-2xl mb-8 leading-relaxed opacity-90">
-          Nihon Moments is your trusted partner in making your dream of studying in Japan a reality. 
-          We guide you through every step of the journey, from application to arrival, with personalized 
-          support and expert guidance.
+          {t('hero.description')}
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button variant="hero" size="lg" className="text-lg px-8 py-6">
-            Start Your Journey
+            {t('hero.startJourney')}
           </Button>
           <Button variant="outline-white" size="lg" className="text-lg px-8 py-6">
-            Learn More
+            {t('hero.learnMore')}
           </Button>
         </div>
       </div>

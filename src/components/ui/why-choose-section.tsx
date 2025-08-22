@@ -1,40 +1,42 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 import { CheckCircle, Star, MapPin, Users2 } from "lucide-react";
 
-const whyChooseFeatures = [
-  {
-    icon: Star,
-    title: "Personalized Attention",
-    description: "Individual guidance tailored to your unique goals and dreams"
-  },
-  {
-    icon: CheckCircle,
-    title: "Proven Success Stories",
-    description: "Hundreds of students successfully placed in top Japanese institutions"
-  },
-  {
-    icon: MapPin,
-    title: "Local Partnerships",
-    description: "Strong network of contacts and partnerships throughout Japan"
-  },
-  {
-    icon: Users2,
-    title: "Welcoming Community",
-    description: "Join a supportive community of fellow students and alumni"
-  }
-];
-
 export const WhyChooseSection = () => {
+  const { t } = useTranslation();
+
+  const whyChooseFeatures = [
+    {
+      icon: Star,
+      title: t('whyChoose.expertise.title'),
+      description: t('whyChoose.expertise.description')
+    },
+    {
+      icon: CheckCircle,
+      title: t('whyChoose.success.title'),
+      description: t('whyChoose.success.description')
+    },
+    {
+      icon: MapPin,
+      title: "Local Partnerships",
+      description: "Strong network of contacts and partnerships throughout Japan"
+    },
+    {
+      icon: Users2,
+      title: "Welcoming Community",
+      description: "Join a supportive community of fellow students and alumni"
+    }
+  ];
+
   return (
     <section className="py-20 bg-soft-pink/30">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-mountain-gray mb-6">
-            Why Choose Nihon Moments?
+            {t('whyChoose.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            We don't just help with paperwork – we help students build their future. 
-            Our unique approach combines expert guidance with genuine care for your success.
+            {t('whyChoose.subtitle')}
           </p>
         </div>
         

@@ -1,27 +1,28 @@
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 import { ArrowRight, Phone, Mail } from "lucide-react";
 
 export const CTASection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-20 bg-gradient-hero text-white">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-          Ready to Start Your
-          <span className="block text-cherry-blossom">Japanese Adventure?</span>
+          {t('cta.title')}
         </h2>
         
         <p className="text-xl md:text-2xl mb-8 leading-relaxed opacity-90">
-          Don't let your dreams of studying in Japan remain just dreams. 
-          Connect with Nihon Moments today and take the first step toward your brighter future.
+          {t('cta.subtitle')}
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button variant="hero-white" size="lg" className="text-lg px-8 py-6 group">
-            Get Started Today
+            {t('cta.getStarted')}
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
           <Button variant="outline-white" size="lg" className="text-lg px-8 py-6">
-            Schedule Consultation
+            {t('cta.contactUs')}
           </Button>
         </div>
         
