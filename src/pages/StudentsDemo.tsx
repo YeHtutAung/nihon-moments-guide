@@ -1,13 +1,15 @@
 import { StudentsSection } from "@/components/ui/students-section";
 import { StudentAdmin } from "@/components/ui/student-admin";
 import { ServiceAdmin } from "@/components/ui/service-admin";
+import { MapSection } from "@/components/ui/map-section";
+import { SchoolAdmin } from "@/components/ui/school-admin";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Settings, Eye, Briefcase } from "lucide-react";
+import { Users, Settings, Eye, Briefcase, MapPin } from "lucide-react";
 
 const StudentsDemo = () => {
-  const [viewMode, setViewMode] = useState<'view' | 'admin' | 'services'>('view');
+  const [viewMode, setViewMode] = useState<'view' | 'admin' | 'services' | 'map' | 'schools'>('view');
 
   return (
     <div className="min-h-screen bg-background">
@@ -42,14 +44,30 @@ const StudentsDemo = () => {
                 <Settings className="w-4 h-4" />
                 Student Admin
               </Button>
-              <Button
-                variant={viewMode === 'services' ? 'default' : 'outline'}
-                onClick={() => setViewMode('services')}
-                className="flex items-center gap-2"
-              >
-                <Briefcase className="w-4 h-4" />
-                Service Admin
-              </Button>
+                             <Button
+                 variant={viewMode === 'services' ? 'default' : 'outline'}
+                 onClick={() => setViewMode('services')}
+                 className="flex items-center gap-2"
+               >
+                 <Briefcase className="w-4 h-4" />
+                 Service Admin
+               </Button>
+               <Button
+                 variant={viewMode === 'map' ? 'default' : 'outline'}
+                 onClick={() => setViewMode('map')}
+                 className="flex items-center gap-2"
+               >
+                 <MapPin className="w-4 h-4" />
+                 View Map
+               </Button>
+               <Button
+                 variant={viewMode === 'schools' ? 'default' : 'outline'}
+                 onClick={() => setViewMode('schools')}
+                 className="flex items-center gap-2"
+               >
+                 <MapPin className="w-4 h-4" />
+                 School Admin
+               </Button>
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Users className="w-4 h-4" />
@@ -227,10 +245,120 @@ const StudentsDemo = () => {
                </CardContent>
              </Card>
 
-             {/* Service Admin Interface */}
-             <ServiceAdmin />
-           </div>
-         )}
+                           {/* Service Admin Interface */}
+              <ServiceAdmin />
+            </div>
+          ) : viewMode === 'map' ? (
+            <div className="space-y-8">
+              {/* Map Features Overview */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <MapPin className="w-5 h-5" />
+                    Tokyo Schools Map Features
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="p-4 border rounded-lg">
+                      <h4 className="font-semibold mb-2">🗺️ Interactive Map</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Interactive Tokyo map with school markers and location details
+                      </p>
+                    </div>
+                    <div className="p-4 border rounded-lg">
+                      <h4 className="font-semibold mb-2">🔍 Search & Filter</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Search schools by name, program, or location with real-time filtering
+                      </p>
+                    </div>
+                    <div className="p-4 border rounded-lg">
+                      <h4 className="font-semibold mb-2">📚 School Details</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Detailed school information with programs, contact details, and descriptions
+                      </p>
+                    </div>
+                    <div className="p-4 border rounded-lg">
+                      <h4 className="font-semibold mb-2">📍 Location Data</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Precise coordinates and addresses for all schools in Tokyo
+                      </p>
+                    </div>
+                    <div className="p-4 border rounded-lg">
+                      <h4 className="font-semibold mb-2">🌐 Multi-language</h4>
+                      <p className="text-sm text-muted-foreground">
+                        School names in both English and Japanese with full descriptions
+                      </p>
+                    </div>
+                    <div className="p-4 border rounded-lg">
+                      <h4 className="font-semibold mb-2">📱 Responsive Design</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Works perfectly on all devices with adaptive map and list layouts
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Map Section */}
+              <MapSection showFilters={true} showSearch={true} maxSchools={12} />
+            </div>
+          ) : (
+            <div className="space-y-8">
+              {/* School Admin Features Overview */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <MapPin className="w-5 h-5" />
+                    School Admin Features
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="p-4 border rounded-lg">
+                      <h4 className="font-semibold mb-2">📊 School Statistics</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Real-time statistics showing total, active, and inactive schools by type
+                      </p>
+                    </div>
+                    <div className="p-4 border rounded-lg">
+                      <h4 className="font-semibold mb-2">✏️ School Management</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Create, edit, and delete schools with comprehensive location and contact data
+                      </p>
+                    </div>
+                    <div className="p-4 border rounded-lg">
+                      <h4 className="font-semibold mb-2">📍 Location Management</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Set precise coordinates and addresses for accurate map positioning
+                      </p>
+                    </div>
+                    <div className="p-4 border rounded-lg">
+                      <h4 className="font-semibold mb-2">📚 Program Management</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Add and manage multiple programs per school with dynamic badges
+                      </p>
+                    </div>
+                    <div className="p-4 border rounded-lg">
+                      <h4 className="font-semibold mb-2">📁 Import/Export</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Export school data as JSON and import from JSON files for backup
+                      </p>
+                    </div>
+                    <div className="p-4 border rounded-lg">
+                      <h4 className="font-semibold mb-2">🔄 Reset to Default</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Reset to default schools or clear all custom changes with confirmation
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* School Admin Interface */}
+              <SchoolAdmin />
+            </div>
+          )}
       </div>
 
       {/* Footer */}

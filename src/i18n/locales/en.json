@@ -74,6 +74,13 @@
     "about": "About",
     "contact": "Contact"
   },
+  "map": {
+    "title": "Tokyo Schools Map",
+    "subtitle": "Explore top universities and schools in Tokyo. Find the perfect institution for your academic journey in Japan.",
+    "mapTitle": "Interactive Tokyo Map",
+    "schoolsList": "Featured Schools",
+    "searchPlaceholder": "Search schools, programs, or locations..."
+  },
   "footer": {
     "copyright": "© 2024 Nihon Moments. All rights reserved.",
     "madeWith": "Made with ❤️ in Japan"
