@@ -193,7 +193,7 @@ const StudentsDemo = () => {
              {/* Admin Interface */}
              <StudentAdmin />
            </div>
-         ) : (
+          ) : viewMode === 'services' ? (
            <div className="space-y-8">
              {/* Service Admin Features Overview */}
              <Card>
@@ -243,9 +243,9 @@ const StudentsDemo = () => {
                    </div>
                  </div>
                </CardContent>
-             </Card>
+              </Card>
 
-                           {/* Service Admin Interface */}
+              {/* Service Admin Interface */}
               <ServiceAdmin />
             </div>
           ) : viewMode === 'map' ? (

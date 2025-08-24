@@ -59,6 +59,13 @@ All colors MUST be HSL.
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Chart colors */
+    --chart-1: 355 70% 45%; /* Primary */
+    --chart-2: 25 95% 53%; /* Orange */
+    --chart-3: 0 84% 60%; /* Red */
+    --chart-4: 142 76% 36%; /* Green */
+    --chart-5: 263 70% 50%; /* Purple */
 
     --sidebar-background: 0 0% 98%;
 
