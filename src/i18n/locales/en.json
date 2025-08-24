@@ -32,6 +32,18 @@
     "proven": {
       "title": "Proven Success",
       "description": "Join hundreds of successful students who have achieved their dreams through our guidance. Their stories inspire us and prove that with the right support, anything is possible."
+    },
+    "students": {
+      "title": "Meet Our Successful Students",
+      "subtitle": "COE approved students now studying at top Japanese universities",
+      "viewAll": "View All Students",
+      "filterBy": "Filter by",
+      "university": "University",
+      "program": "Program",
+      "year": "Year",
+      "country": "Country",
+      "achievements": "Achievements",
+      "testimonial": "Testimonial"
     }
   },
   "whyChoose": {

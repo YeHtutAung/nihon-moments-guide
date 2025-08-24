@@ -1,13 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useTranslation } from "react-i18next";
 import { Users, Heart, Globe } from "lucide-react";
-import student1 from "@/assets/students/student-1.jpg";
-import student2 from "@/assets/students/student-2.jpg";
-import student3 from "@/assets/students/student-3.jpg";
-import student4 from "@/assets/students/student-4.jpg";
-import student5 from "@/assets/students/student-5.jpg";
-import student6 from "@/assets/students/student-6.jpg";
+import { StudentsSection } from "@/components/ui/students-section";
 
 export const SupportSection = () => {
   const { t } = useTranslation();
@@ -27,45 +21,6 @@ export const SupportSection = () => {
       icon: Globe,
       title: "Strong Local Network",
       description: "Our established partnerships with Japanese institutions and local contacts ensure you have support even before you arrive in Japan. You're never alone in this journey."
-    }
-  ];
-
-  const successfulStudents = [
-    {
-      image: student1,
-      name: "Sakura Tanaka",
-      university: "Tokyo University",
-      program: "Computer Science"
-    },
-    {
-      image: student2,
-      name: "Michael Chen",
-      university: "Waseda University",
-      program: "International Relations"
-    },
-    {
-      image: student3,
-      name: "Emily Rodriguez",
-      university: "Keio University",
-      program: "Business Administration"
-    },
-    {
-      image: student4,
-      name: "David Kim",
-      university: "Osaka University",
-      program: "Engineering"
-    },
-    {
-      image: student5,
-      name: "Anna Sato",
-      university: "Kyoto University",
-      program: "Cultural Studies"
-    },
-    {
-      image: student6,
-      name: "James Wilson",
-      university: "Sophia University",
-      program: "Japanese Literature"
     }
   ];
 
@@ -100,55 +55,7 @@ export const SupportSection = () => {
         </div>
         
         {/* Success Stories Gallery */}
-        <div className="mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-mountain-gray mb-4">
-              Meet Our <span className="text-primary">Successful Students</span>
-            </h3>
-            <p className="text-lg text-muted-foreground">
-              COE approved students now studying at top Japanese universities
-            </p>
-          </div>
-          
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full max-w-5xl mx-auto"
-          >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {successfulStudents.map((student, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                  <div className="p-1">
-                    <Card className="border-0 shadow-soft bg-gradient-cherry overflow-hidden">
-                      <div className="aspect-square overflow-hidden">
-                        <img 
-                          src={student.image} 
-                          alt={`${student.name} - ${student.university} student`}
-                          className="w-full h-full object-cover transition-transform hover:scale-105"
-                        />
-                      </div>
-                      <CardContent className="p-4">
-                        <h4 className="font-semibold text-mountain-gray text-center mb-1">
-                          {student.name}
-                        </h4>
-                        <p className="text-sm text-muted-foreground text-center mb-1">
-                          {student.university}
-                        </p>
-                        <p className="text-xs text-muted-foreground text-center">
-                          {student.program}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-0 bg-white/90 hover:bg-white shadow-soft" />
-            <CarouselNext className="right-0 bg-white/90 hover:bg-white shadow-soft" />
-          </Carousel>
-        </div>
+        <StudentsSection showFilters={true} maxStudents={8} showTestimonials={true} />
         
         {/* Testimonial */}
         <div className="bg-card rounded-2xl p-8 md:p-12 shadow-soft border border-border/50">
