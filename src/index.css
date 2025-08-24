@@ -46,6 +46,8 @@ All colors MUST be HSL.
     --deep-red: 355 70% 45%;
     --soft-pink: 345 40% 92%;
     --mountain-gray: 220 15% 25%;
+    --success-green: 142 76% 36%;
+    --forest-green: 140 50% 30%;
     
     /* Gradients */
     --gradient-cherry: linear-gradient(135deg, hsl(345 60% 88%), hsl(355 50% 85%));
@@ -61,10 +63,10 @@ All colors MUST be HSL.
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     
     /* Chart colors */
-    --chart-1: 355 70% 45%; /* Primary */
+    --chart-1: 142 76% 36%; /* Success Green */
     --chart-2: 25 95% 53%; /* Orange */
     --chart-3: 0 84% 60%; /* Red */
-    --chart-4: 142 76% 36%; /* Green */
+    --chart-4: 355 70% 45%; /* Primary */
     --chart-5: 263 70% 50%; /* Purple */
 
     --sidebar-background: 0 0% 98%;

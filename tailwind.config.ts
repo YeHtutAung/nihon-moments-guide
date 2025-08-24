@@ -56,6 +56,8 @@ export default {
 				'deep-red': 'hsl(var(--deep-red))',
 				'soft-pink': 'hsl(var(--soft-pink))',
 				'mountain-gray': 'hsl(var(--mountain-gray))',
+				'success-green': 'hsl(var(--success-green))',
+				'forest-green': 'hsl(var(--forest-green))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
