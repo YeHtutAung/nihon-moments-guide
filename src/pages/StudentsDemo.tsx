@@ -1,12 +1,13 @@
 import { StudentsSection } from "@/components/ui/students-section";
 import { StudentAdmin } from "@/components/ui/student-admin";
+import { ServiceAdmin } from "@/components/ui/service-admin";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Settings, Eye } from "lucide-react";
+import { Users, Settings, Eye, Briefcase } from "lucide-react";
 
 const StudentsDemo = () => {
-  const [viewMode, setViewMode] = useState<'view' | 'admin'>('view');
+  const [viewMode, setViewMode] = useState<'view' | 'admin' | 'services'>('view');
 
   return (
     <div className="min-h-screen bg-background">
@@ -39,7 +40,15 @@ const StudentsDemo = () => {
                 className="flex items-center gap-2"
               >
                 <Settings className="w-4 h-4" />
-                Admin Panel
+                Student Admin
+              </Button>
+              <Button
+                variant={viewMode === 'services' ? 'default' : 'outline'}
+                onClick={() => setViewMode('services')}
+                className="flex items-center gap-2"
+              >
+                <Briefcase className="w-4 h-4" />
+                Service Admin
               </Button>
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -111,62 +120,117 @@ const StudentsDemo = () => {
               showTestimonials={true} 
             />
           </div>
-        ) : (
-          <div className="space-y-8">
-            {/* Admin Features Overview */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Settings className="w-5 h-5" />
-                  Admin Panel Features
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  <div className="p-4 border rounded-lg">
-                    <h4 className="font-semibold mb-2">📊 Statistics Dashboard</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Real-time statistics showing total students, universities, programs, and countries
-                    </p>
-                  </div>
-                  <div className="p-4 border rounded-lg">
-                    <h4 className="font-semibold mb-2">✏️ CRUD Operations</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Create, read, update, and delete students with full form validation
-                    </p>
-                  </div>
-                  <div className="p-4 border rounded-lg">
-                    <h4 className="font-semibold mb-2">📁 Import/Export</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Export student data as JSON and import from JSON files for backup
-                    </p>
-                  </div>
-                  <div className="p-4 border rounded-lg">
-                    <h4 className="font-semibold mb-2">🖼️ Image Management</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Upload images directly or use URLs with preview and validation
-                    </p>
-                  </div>
-                  <div className="p-4 border rounded-lg">
-                    <h4 className="font-semibold mb-2">🏷️ Achievement System</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Add and manage multiple achievements per student with visual badges
-                    </p>
-                  </div>
-                  <div className="p-4 border rounded-lg">
-                    <h4 className="font-semibold mb-2">🔄 Reset Functionality</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Reset to default data or clear all custom changes with confirmation
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                 ) : viewMode === 'admin' ? (
+           <div className="space-y-8">
+             {/* Admin Features Overview */}
+             <Card>
+               <CardHeader>
+                 <CardTitle className="flex items-center gap-2">
+                   <Settings className="w-5 h-5" />
+                   Student Admin Features
+                 </CardTitle>
+               </CardHeader>
+               <CardContent>
+                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                   <div className="p-4 border rounded-lg">
+                     <h4 className="font-semibold mb-2">📊 Statistics Dashboard</h4>
+                     <p className="text-sm text-muted-foreground">
+                       Real-time statistics showing total students, universities, programs, and countries
+                     </p>
+                   </div>
+                   <div className="p-4 border rounded-lg">
+                     <h4 className="font-semibold mb-2">✏️ CRUD Operations</h4>
+                     <p className="text-sm text-muted-foreground">
+                       Create, read, update, and delete students with full form validation
+                     </p>
+                   </div>
+                   <div className="p-4 border rounded-lg">
+                     <h4 className="font-semibold mb-2">📁 Import/Export</h4>
+                     <p className="text-sm text-muted-foreground">
+                       Export student data as JSON and import from JSON files for backup
+                     </p>
+                   </div>
+                   <div className="p-4 border rounded-lg">
+                     <h4 className="font-semibold mb-2">🖼️ Image Management</h4>
+                     <p className="text-sm text-muted-foreground">
+                       Upload images directly or use URLs with preview and validation
+                     </p>
+                   </div>
+                   <div className="p-4 border rounded-lg">
+                     <h4 className="font-semibold mb-2">🏷️ Achievement System</h4>
+                     <p className="text-sm text-muted-foreground">
+                       Add and manage multiple achievements per student with visual badges
+                     </p>
+                   </div>
+                   <div className="p-4 border rounded-lg">
+                     <h4 className="font-semibold mb-2">🔄 Reset Functionality</h4>
+                     <p className="text-sm text-muted-foreground">
+                       Reset to default data or clear all custom changes with confirmation
+                     </p>
+                   </div>
+                 </div>
+               </CardContent>
+             </Card>
 
-            {/* Admin Interface */}
-            <StudentAdmin />
-          </div>
-        )}
+             {/* Admin Interface */}
+             <StudentAdmin />
+           </div>
+         ) : (
+           <div className="space-y-8">
+             {/* Service Admin Features Overview */}
+             <Card>
+               <CardHeader>
+                 <CardTitle className="flex items-center gap-2">
+                   <Briefcase className="w-5 h-5" />
+                   Service Admin Features
+                 </CardTitle>
+               </CardHeader>
+               <CardContent>
+                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                   <div className="p-4 border rounded-lg">
+                     <h4 className="font-semibold mb-2">📊 Service Statistics</h4>
+                     <p className="text-sm text-muted-foreground">
+                       Real-time statistics showing total, active, and inactive services
+                     </p>
+                   </div>
+                   <div className="p-4 border rounded-lg">
+                     <h4 className="font-semibold mb-2">✏️ Service Management</h4>
+                     <p className="text-sm text-muted-foreground">
+                       Create, edit, and delete services with icon selection and status control
+                     </p>
+                   </div>
+                   <div className="p-4 border rounded-lg">
+                     <h4 className="font-semibold mb-2">🔄 Drag & Drop Reordering</h4>
+                     <p className="text-sm text-muted-foreground">
+                       Reorder services by dragging and dropping for custom display order
+                     </p>
+                   </div>
+                   <div className="p-4 border rounded-lg">
+                     <h4 className="font-semibold mb-2">👁️ Status Toggle</h4>
+                     <p className="text-sm text-muted-foreground">
+                       Activate or deactivate services with instant visibility control
+                     </p>
+                   </div>
+                   <div className="p-4 border rounded-lg">
+                     <h4 className="font-semibold mb-2">📁 Import/Export</h4>
+                     <p className="text-sm text-muted-foreground">
+                       Export service data as JSON and import from JSON files for backup
+                     </p>
+                   </div>
+                   <div className="p-4 border rounded-lg">
+                     <h4 className="font-semibold mb-2">🔄 Reset to Default</h4>
+                     <p className="text-sm text-muted-foreground">
+                       Reset to default services or clear all custom changes with confirmation
+                     </p>
+                   </div>
+                 </div>
+               </CardContent>
+             </Card>
+
+             {/* Service Admin Interface */}
+             <ServiceAdmin />
+           </div>
+         )}
       </div>
 
       {/* Footer */}
