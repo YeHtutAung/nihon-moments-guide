@@ -31,7 +31,7 @@ export const GreetingSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* CEO Photo and Info - Student Section Style */}
           <div className="text-center lg:text-left">
-            <div className="w-32 h-32 mx-auto lg:mx-0 rounded-lg overflow-hidden shadow-soft mb-4">
+            <div className="w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 mx-auto lg:mx-0 rounded-lg overflow-hidden shadow-soft mb-4">
               <img
                 src={ceo.image}
                 alt={`${ceo.name} - ${ceo.title}`}
