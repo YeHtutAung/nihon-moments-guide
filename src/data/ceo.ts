@@ -17,7 +17,7 @@ export interface CEO {
 
 export const ceoData: CEO = {
   id: "ceo-1",
-  image: "/ceo-photo.jpg", // We'll need to add a realistic photo
+  image: "/src/assets/ceo-profile.jpg",
   name: "Yuki Tanaka",
   title: "Chief Executive Officer",
   company: "Nihon Moments Co., Ltd.",
