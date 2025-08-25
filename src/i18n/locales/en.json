@@ -1,4 +1,30 @@
 {
+  "greeting": {
+    "title": "A Message from Our CEO",
+    "ceo": {
+      "name": "Yuki Tanaka",
+      "title": "Chief Executive Officer",
+      "company": "Nihon Moments Co., Ltd.",
+      "signature": "Yuki Tanaka"
+    },
+    "message": {
+      "paragraph1": "Welcome to Nihon Moments! As the CEO of this company, I am honored to share our vision and mission with you, our future students and partners in this incredible journey to Japan.",
+      "paragraph2": "Our company was founded with a simple yet powerful belief: every student deserves the opportunity to pursue their dreams of studying in Japan, regardless of their background or circumstances. We understand that the path to studying abroad can be complex and overwhelming, which is why we've dedicated ourselves to making this journey as smooth and accessible as possible.",
+      "paragraph3": "At Nihon Moments, we don't just provide services; we build relationships. We believe in the power of personalized guidance, cultural understanding, and unwavering support. Our team of experienced professionals works tirelessly to ensure that every student receives the attention and care they deserve."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be the most trusted and comprehensive partner for international students pursuing education in Japan, fostering global connections and cultural exchange."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To provide exceptional guidance and support services that make studying in Japan accessible, affordable, and life-changing for students worldwide."
+    },
+    "values": {
+      "title": "Our Values",
+      "description": "Integrity, excellence, cultural sensitivity, and unwavering commitment to student success guide everything we do."
+    }
+  },
   "hero": {
     "title": "Your Journey to",
     "subtitle": "Japan Begins Here",

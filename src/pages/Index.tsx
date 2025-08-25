@@ -1,5 +1,6 @@
 import { Header } from "@/components/ui/header";
 import { HeroSection } from "@/components/ui/hero-section";
+import { GreetingSection } from "@/components/ui/greeting-section";
 import { ServicesSection } from "@/components/ui/services-section";
 import { IntakeSection } from "@/components/ui/intake-section";
 import { SupportSection } from "@/components/ui/support-section";
@@ -16,6 +17,7 @@ const Index = () => {
       <Header />
       <main className="min-h-screen pt-16">
         <HeroSection />
+        <GreetingSection />
         <ServicesSection />
         <IntakeSection />
         <SupportSection />
