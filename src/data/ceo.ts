@@ -17,7 +17,7 @@ export interface CEO {
 
 export const ceoData: CEO = {
   id: "ceo-1",
-  image: "/src/assets/ceo-profile.jpg",
+  image: "/src/assets/ceo-formal.jpg",
   name: "Yuki Tanaka",
   title: "Chief Executive Officer",
   company: "Nihon Moments Co., Ltd.",
