@@ -81,6 +81,33 @@
     "schoolsList": "Featured Schools",
     "searchPlaceholder": "Search schools, programs, or locations..."
   },
+  "intake": {
+    "title": "Academic Intake Periods",
+    "subtitle": "Plan your studies in Japan with our four intake periods throughout the year. Each intake has specific requirements and timelines to help you prepare effectively.",
+    "january": {
+      "description": "Start your academic year with the main intake. Perfect for students who want to begin their studies at the traditional Japanese academic calendar start."
+    },
+    "april": {
+      "description": "Spring intake offering a fresh start. Ideal for students who prefer to begin their studies during the beautiful cherry blossom season."
+    },
+    "july": {
+      "description": "Summer intake for students who want to start mid-year. Great opportunity to join ongoing programs and catch up with the academic schedule."
+    },
+    "october": {
+      "description": "Fall intake providing flexibility for students who need more time to prepare. Perfect for those who want to start in the autumn semester."
+    },
+    "requirements": {
+      "title": "JLPT Requirements",
+      "january": "Minimum JLPT N3 level required for January intake due to higher academic demands.",
+      "other": "JLPT N5 level sufficient for April, July, and October intakes."
+    },
+    "timeline": {
+      "title": "Application Timeline",
+      "application": "Application Process",
+      "coe": "COE Processing",
+      "visa": "Visa Application"
+    }
+  },
   "footer": {
     "copyright": "© 2024 Nihon Moments. All rights reserved.",
     "madeWith": "Made with ❤️ in Japan"
