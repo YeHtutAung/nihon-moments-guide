@@ -29,9 +29,9 @@ export const GreetingSection = () => {
     <section className="py-12 bg-gradient-to-br from-soft-pink/20 to-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          {/* CEO Photo and Info - Student Section Style */}
+          {/* CEO Photo and Info - Red Rectangle Size */}
           <div className="text-center lg:text-left">
-            <div className="w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 mx-auto lg:mx-0 rounded-lg overflow-hidden shadow-soft mb-4">
+            <div className="w-64 h-80 sm:w-72 sm:h-96 lg:w-80 lg:h-96 mx-auto lg:mx-0 rounded-lg overflow-hidden shadow-soft mb-3">
               <img
                 src={ceo.image}
                 alt={`${ceo.name} - ${ceo.title}`}
@@ -39,15 +39,13 @@ export const GreetingSection = () => {
               />
             </div>
             
-            <div className="mb-4">
-              <h3 className="text-lg font-semibold text-mountain-gray text-center lg:text-left mb-1">
+            {/* Yellow Rectangle Size - Compact Text */}
+            <div className="mb-4 max-w-64 mx-auto lg:mx-0">
+              <h3 className="text-base font-semibold text-mountain-gray text-center lg:text-left mb-1">
                 {ceo.name}
               </h3>
               <p className="text-sm text-muted-foreground text-center lg:text-left">
                 {ceo.title}
-              </p>
-              <p className="text-xs text-muted-foreground text-center lg:text-left">
-                {ceo.company}
               </p>
             </div>
           </div>
