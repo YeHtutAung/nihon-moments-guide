@@ -1,11 +1,35 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
 import { Star, Target, Heart } from "lucide-react";
-import { getCEOFromStorage } from "@/utils/ceo-management";
+import { getCEOFromStorage, saveCEOToStorage } from "@/utils/ceo-management";
+import { useEffect, useState } from "react";
+import { ceoData, type CEO } from "@/data/ceo";
 
 export const GreetingSection = () => {
   const { t } = useTranslation();
-  const ceo = getCEOFromStorage();
+
+  // Start with stored or bundled data, then hydrate from API if available
+  const [ceo, setCeo] = useState<CEO>(getCEOFromStorage());
+
+  useEffect(() => {
+    const load = async () => {
+      const baseUrl = (import.meta as any).env?.VITE_API_BASE_URL || ""; // defaults to same-origin
+      const url = `${baseUrl}/ceo`;
+      try {
+        const res = await fetch(url, { headers: { "Content-Type": "application/json" } });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = (await res.json()) as CEO;
+        setCeo(data);
+        saveCEOToStorage(data);
+      } catch {
+        // fallback to stored or bundled data
+        const stored = getCEOFromStorage();
+        setCeo(stored || ceoData);
+      }
+    };
+    load();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const visionMissionPoints = [
     {
