@@ -18,7 +18,7 @@ export interface CEO {
 export const ceoData: CEO = {
   id: "ceo-1",
   image: "/src/assets/ceo-formal.jpg",
-  name: "Yuki Tanaka",
+  name: "Hsu Yamin Eaim",
   title: "Chief Executive Officer",
   company: "Nihon Moments Co., Ltd.",
   bio: "With over 15 years of experience in international education and cultural exchange, Yuki Tanaka has dedicated his career to helping students achieve their dreams of studying in Japan.",

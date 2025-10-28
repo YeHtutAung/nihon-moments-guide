@@ -55,16 +55,23 @@ export const GreetingSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* CEO Photo and Info - Red Rectangle Size */}
           <div className="text-center lg:text-left">
-            <div className="w-64 h-80 sm:w-72 sm:h-96 lg:w-80 lg:h-96 mx-auto lg:mx-0 rounded-lg overflow-hidden shadow-soft mb-3">
+            <div className="w-64 h-80 sm:w-72 sm:h-96 lg:w-80 lg:h-96 mx-auto lg:mx-0 rounded-lg overflow-hidden shadow-soft mb-3 bg-gray-50 relative">
+              {/*
+                Use an absolutely positioned image with object-cover + object-center
+                so the portrait stays centered in the rounded frame across sizes.
+                Add lazy loading and async decoding for a smoother experience.
+              */}
               <img
                 src={ceo.image}
                 alt={`${ceo.name} - ${ceo.title}`}
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover object-[center_10%]"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             
             {/* Yellow Rectangle Size - Compact Text */}
-            <div className="mb-4 max-w-64 mx-auto lg:mx-0">
+            <div className="mb-4 max-w-[16rem] mx-auto lg:mx-0">
               <h3 className="text-base font-semibold text-mountain-gray text-center lg:text-left mb-1">
                 {ceo.name}
               </h3>
