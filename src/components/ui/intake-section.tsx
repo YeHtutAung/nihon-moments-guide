@@ -8,10 +8,9 @@ export const IntakeSection = () => {
 
   const intakes = [
     {
-      month: "January",
+      monthKey: "january",
       japaneseMonth: "1月",
       jlptRequirement: "N3",
-      description: t('intake.january.description'),
       icon: Calendar,
       color: "bg-blue-500",
       textColor: "text-blue-500",
@@ -19,10 +18,9 @@ export const IntakeSection = () => {
       borderColor: "border-blue-200"
     },
     {
-      month: "April",
+      monthKey: "april",
       japaneseMonth: "4月",
       jlptRequirement: "N5",
-      description: t('intake.april.description'),
       icon: BookOpen,
       color: "bg-green-500",
       textColor: "text-green-500",
@@ -30,10 +28,9 @@ export const IntakeSection = () => {
       borderColor: "border-green-200"
     },
     {
-      month: "July",
+      monthKey: "july",
       japaneseMonth: "7月",
       jlptRequirement: "N5",
-      description: t('intake.july.description'),
       icon: Clock,
       color: "bg-orange-500",
       textColor: "text-orange-500",
@@ -41,10 +38,9 @@ export const IntakeSection = () => {
       borderColor: "border-orange-200"
     },
     {
-      month: "October",
+      monthKey: "october",
       japaneseMonth: "10月",
       jlptRequirement: "N5",
-      description: t('intake.october.description'),
       icon: Award,
       color: "bg-purple-500",
       textColor: "text-purple-500",
@@ -67,8 +63,8 @@ export const IntakeSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {intakes.map((intake, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className={`group border-2 ${intake.borderColor} shadow-soft hover:shadow-elegant transition-all duration-300 transform hover:-translate-y-2`}
             >
               <CardHeader className={`${intake.bgColor} text-center pb-4`}>
@@ -76,21 +72,21 @@ export const IntakeSection = () => {
                   <intake.icon className="w-8 h-8 text-white" />
                 </div>
                 <CardTitle className="text-2xl font-bold text-mountain-gray mb-2">
-                  {intake.month}
+                  {t(`intake.months.${intake.monthKey}`)}
                 </CardTitle>
                 <div className="text-lg text-muted-foreground mb-2">
                   {intake.japaneseMonth}
                 </div>
-                <Badge 
-                  variant="secondary" 
+                <Badge
+                  variant="secondary"
                   className={`${intake.textColor} ${intake.bgColor} border ${intake.borderColor} px-4 py-2 text-sm font-semibold`}
                 >
-                  JLPT {intake.jlptRequirement} Required
+                  {t('intake.jlptRequired', { level: intake.jlptRequirement })}
                 </Badge>
               </CardHeader>
               <CardContent className="p-6">
                 <p className="text-muted-foreground text-center leading-relaxed">
-                  {intake.description}
+                  {t(`intake.${intake.monthKey}.description`)}
                 </p>
               </CardContent>
             </Card>
@@ -108,13 +104,13 @@ export const IntakeSection = () => {
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <span className="text-muted-foreground">
-                    <strong className="text-mountain-gray">January Intake:</strong> {t('intake.requirements.january')}
+                    <strong className="text-mountain-gray">{t('intake.requirements.januaryIntake')}:</strong> {t('intake.requirements.january')}
                   </span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <span className="text-muted-foreground">
-                    <strong className="text-mountain-gray">Other Intakes:</strong> {t('intake.requirements.other')}
+                    <strong className="text-mountain-gray">{t('intake.requirements.otherIntakes')}:</strong> {t('intake.requirements.other')}
                   </span>
                 </li>
               </ul>
@@ -126,15 +122,15 @@ export const IntakeSection = () => {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-muted-foreground">{t('intake.timeline.application')}</span>
-                  <span className="text-sm font-medium text-primary">6-8 months</span>
+                  <span className="text-sm font-medium text-primary">{t('intake.timeline.applicationDuration')}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-muted-foreground">{t('intake.timeline.coe')}</span>
-                  <span className="text-sm font-medium text-primary">3-4 months</span>
+                  <span className="text-sm font-medium text-primary">{t('intake.timeline.coeDuration')}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-muted-foreground">{t('intake.timeline.visa')}</span>
-                  <span className="text-sm font-medium text-primary">1-2 months</span>
+                  <span className="text-sm font-medium text-primary">{t('intake.timeline.visaDuration')}</span>
                 </div>
               </div>
             </div>

@@ -18,13 +18,13 @@ export const WhyChooseSection = () => {
     },
     {
       icon: MapPin,
-      title: "Local Partnerships",
-      description: "Strong network of contacts and partnerships throughout Japan"
+      title: t('whyChoose.partnerships.title'),
+      description: t('whyChoose.partnerships.description')
     },
     {
       icon: Users2,
-      title: "Welcoming Community",
-      description: "Join a supportive community of fellow students and alumni"
+      title: t('whyChoose.community.title'),
+      description: t('whyChoose.community.description')
     }
   ];
 
@@ -39,7 +39,7 @@ export const WhyChooseSection = () => {
             {t('whyChoose.subtitle')}
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {whyChooseFeatures.map((feature, index) => (
             <Card key={index} className="group border-0 shadow-soft bg-card hover:shadow-elegant transition-all duration-300">
@@ -57,20 +57,20 @@ export const WhyChooseSection = () => {
             </Card>
           ))}
         </div>
-        
+
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="bg-card rounded-xl p-6 shadow-soft">
             <div className="text-4xl font-bold text-primary mb-2">500+</div>
-            <div className="text-muted-foreground">Students Supported</div>
+            <div className="text-muted-foreground">{t('whyChoose.stats.studentsSupported')}</div>
           </div>
           <div className="bg-card rounded-xl p-6 shadow-soft">
             <div className="text-4xl font-bold text-primary mb-2">95%</div>
-            <div className="text-muted-foreground">Success Rate</div>
+            <div className="text-muted-foreground">{t('whyChoose.stats.successRate')}</div>
           </div>
           <div className="bg-card rounded-xl p-6 shadow-soft">
             <div className="text-4xl font-bold text-primary mb-2">50+</div>
-            <div className="text-muted-foreground">Partner Institutions</div>
+            <div className="text-muted-foreground">{t('whyChoose.stats.partnerInstitutions')}</div>
           </div>
         </div>
       </div>

@@ -1,35 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
 import { Star, Target, Heart } from "lucide-react";
-import { getCEOFromStorage, saveCEOToStorage } from "@/utils/ceo-management";
-import { useEffect, useState } from "react";
-import { ceoData, type CEO } from "@/data/ceo";
+import { companyLeader } from "@/data/ceo";
 
 export const GreetingSection = () => {
   const { t } = useTranslation();
-
-  // Start with stored or bundled data, then hydrate from API if available
-  const [ceo, setCeo] = useState<CEO>(getCEOFromStorage());
-
-  useEffect(() => {
-    const load = async () => {
-      const baseUrl = (import.meta as any).env?.VITE_API_BASE_URL || ""; // defaults to same-origin
-      const url = `${baseUrl}/ceo`;
-      try {
-        const res = await fetch(url, { headers: { "Content-Type": "application/json" } });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data = (await res.json()) as CEO;
-        setCeo(data);
-        saveCEOToStorage(data);
-      } catch {
-        // fallback to stored or bundled data
-        const stored = getCEOFromStorage();
-        setCeo(stored || ceoData);
-      }
-    };
-    load();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const visionMissionPoints = [
     {
@@ -53,48 +28,42 @@ export const GreetingSection = () => {
     <section className="py-12 bg-gradient-to-br from-soft-pink/20 to-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          {/* CEO Photo and Info - Red Rectangle Size */}
+          {/* CEO Photo and Info */}
           <div className="text-center lg:text-left">
             <div className="w-64 h-80 sm:w-72 sm:h-96 lg:w-80 lg:h-96 mx-auto lg:mx-0 rounded-lg overflow-hidden shadow-soft mb-3 bg-gray-50 relative">
-              {/*
-                Use an absolutely positioned image with object-cover + object-center
-                so the portrait stays centered in the rounded frame across sizes.
-                Add lazy loading and async decoding for a smoother experience.
-              */}
               <img
-                src={ceo.image}
-                alt={`${ceo.name} - ${ceo.title}`}
+                src={companyLeader.image}
+                alt={`${companyLeader.name} - ${companyLeader.title}`}
                 className="absolute inset-0 w-full h-full object-cover object-[center_10%]"
                 loading="lazy"
                 decoding="async"
               />
             </div>
-            
-            {/* Yellow Rectangle Size - Compact Text */}
+
             <div className="mb-4 max-w-[16rem] mx-auto lg:mx-0">
               <h3 className="text-base font-semibold text-mountain-gray text-center lg:text-left mb-1">
-                {ceo.name}
+                {companyLeader.name}
               </h3>
               <p className="text-sm text-muted-foreground text-center lg:text-left">
-                {ceo.title}
+                {companyLeader.title}
               </p>
             </div>
           </div>
 
-          {/* Greeting Message - Dynamic from CEO Data */}
+          {/* Greeting Message */}
           <div className="space-y-6">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-mountain-gray mb-4 leading-tight">
                 {t('greeting.title')}
               </h2>
               <div className="text-lg text-muted-foreground leading-relaxed space-y-3">
-                <p>{ceo.message.greeting}</p>
-                <p>{ceo.message.vision}</p>
-                <p>{ceo.message.commitment}</p>
+                <p>{companyLeader.message.greeting}</p>
+                <p>{companyLeader.message.vision}</p>
+                <p>{companyLeader.message.commitment}</p>
               </div>
             </div>
 
-            {/* Vision, Mission, Values - Compact Cards */}
+            {/* Vision, Mission, Values */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {visionMissionPoints.map((point, index) => (
                 <Card key={index} className="border-0 shadow-soft bg-white/80 hover:shadow-elegant transition-all duration-300">

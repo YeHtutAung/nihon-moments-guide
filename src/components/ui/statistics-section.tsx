@@ -1,22 +1,22 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  ChartContainer, 
-  ChartTooltip, 
+import { useTranslation } from "react-i18next";
+import {
+  ChartContainer,
+  ChartTooltip,
   ChartTooltipContent,
-  type ChartConfig 
+  type ChartConfig
 } from "@/components/ui/chart";
-import { 
-  BarChart, 
-  Bar, 
-  XAxis, 
-  YAxis, 
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
   ResponsiveContainer,
   PieChart,
   Pie,
   Cell
 } from "recharts";
 
-// Sample data for student enrollment by year
 const enrollmentData = [
   { year: "2020", students: 45 },
   { year: "2021", students: 78 },
@@ -25,11 +25,10 @@ const enrollmentData = [
   { year: "2024", students: 189 },
 ];
 
-// Sample data for COE success rate
 const coeSuccessData = [
-  { name: "Approved", value: 87, fill: "hsl(var(--chart-1))" },
-  { name: "Pending", value: 8, fill: "hsl(var(--chart-2))" },
-  { name: "Rejected", value: 5, fill: "hsl(var(--chart-3))" },
+  { name: "approved", value: 87, fill: "hsl(var(--chart-1))" },
+  { name: "pending", value: 8, fill: "hsl(var(--chart-2))" },
+  { name: "rejected", value: 5, fill: "hsl(var(--chart-3))" },
 ];
 
 const enrollmentConfig: ChartConfig = {
@@ -45,7 +44,7 @@ const coeConfig: ChartConfig = {
     color: "hsl(var(--chart-1))",
   },
   pending: {
-    label: "Pending", 
+    label: "Pending",
     color: "hsl(var(--chart-2))",
   },
   rejected: {
@@ -55,15 +54,17 @@ const coeConfig: ChartConfig = {
 };
 
 export const StatisticsSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-16 bg-gradient-to-br from-background to-muted/30">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            Our Success in Numbers
+            {t('statistics.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Track our growing community and exceptional success rates in helping students achieve their Japanese education dreams
+            {t('statistics.subtitle')}
           </p>
         </div>
 
@@ -71,24 +72,24 @@ export const StatisticsSection = () => {
           {/* Student Enrollment by Year */}
           <Card className="border-primary/20 shadow-lg">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-xl">
-                📈 Student Enrollment Growth
+              <CardTitle className="text-xl">
+                {t('statistics.enrollmentTitle')}
               </CardTitle>
               <p className="text-muted-foreground">
-                Annual growth of students joining our agency
+                {t('statistics.enrollmentSubtitle')}
               </p>
             </CardHeader>
             <CardContent>
               <ChartContainer config={enrollmentConfig} className="h-80 w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={enrollmentData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                    <XAxis 
-                      dataKey="year" 
+                    <XAxis
+                      dataKey="year"
                       axisLine={false}
                       tickLine={false}
                       tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 12 }}
                     />
-                    <YAxis 
+                    <YAxis
                       axisLine={false}
                       tickLine={false}
                       tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 12 }}
@@ -108,7 +109,7 @@ export const StatisticsSection = () => {
               </ChartContainer>
               <div className="mt-4 text-center">
                 <p className="text-sm text-muted-foreground">
-                  <span className="font-semibold text-primary">320% growth</span> over 5 years
+                  <span className="font-semibold text-primary">{t('statistics.enrollmentGrowth')}</span>
                 </p>
               </div>
             </CardContent>
@@ -117,11 +118,11 @@ export const StatisticsSection = () => {
           {/* COE Success Rate */}
           <Card className="border-primary/20 shadow-lg">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-xl">
-                🎯 COE Success Rate
+              <CardTitle className="text-xl">
+                {t('statistics.coeTitle')}
               </CardTitle>
               <p className="text-muted-foreground">
-                Certificate of Eligibility approval statistics
+                {t('statistics.coeSubtitle')}
               </p>
             </CardHeader>
             <CardContent>
@@ -139,8 +140,8 @@ export const StatisticsSection = () => {
                       className="transition-all duration-300"
                     >
                       {coeSuccessData.map((entry, index) => (
-                        <Cell 
-                          key={`cell-${index}`} 
+                        <Cell
+                          key={`cell-${index}`}
                           fill={entry.fill}
                           className="hover:opacity-80 transition-opacity duration-300"
                         />
@@ -156,11 +157,11 @@ export const StatisticsSection = () => {
                 {coeSuccessData.map((item) => (
                   <div key={item.name} className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div 
+                      <div
                         className="w-3 h-3 rounded-full"
                         style={{ backgroundColor: item.fill }}
                       />
-                      <span className="text-sm font-medium">{item.name}</span>
+                      <span className="text-sm font-medium">{t(`statistics.${item.name}`)}</span>
                     </div>
                     <span className="text-sm font-bold">{item.value}%</span>
                   </div>
@@ -174,19 +175,19 @@ export const StatisticsSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
           <div className="text-center p-6 bg-card rounded-lg border border-primary/10">
             <div className="text-3xl font-bold text-primary mb-2">189</div>
-            <div className="text-sm text-muted-foreground">Total Students (2024)</div>
+            <div className="text-sm text-muted-foreground">{t('statistics.totalStudents')}</div>
           </div>
           <div className="text-center p-6 bg-card rounded-lg border border-primary/10">
             <div className="text-3xl font-bold text-primary mb-2">87%</div>
-            <div className="text-sm text-muted-foreground">COE Approval Rate</div>
+            <div className="text-sm text-muted-foreground">{t('statistics.coeApprovalRate')}</div>
           </div>
           <div className="text-center p-6 bg-card rounded-lg border border-primary/10">
             <div className="text-3xl font-bold text-primary mb-2">15+</div>
-            <div className="text-sm text-muted-foreground">Partner Universities</div>
+            <div className="text-sm text-muted-foreground">{t('statistics.partnerUniversities')}</div>
           </div>
           <div className="text-center p-6 bg-card rounded-lg border border-primary/10">
             <div className="text-3xl font-bold text-primary mb-2">5</div>
-            <div className="text-sm text-muted-foreground">Years Experience</div>
+            <div className="text-sm text-muted-foreground">{t('statistics.yearsExperience')}</div>
           </div>
         </div>
       </div>

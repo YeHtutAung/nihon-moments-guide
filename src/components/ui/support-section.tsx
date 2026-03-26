@@ -19,8 +19,8 @@ export const SupportSection = () => {
     },
     {
       icon: Globe,
-      title: "Strong Local Network",
-      description: "Our established partnerships with Japanese institutions and local contacts ensure you have support even before you arrive in Japan. You're never alone in this journey."
+      title: t('support.localNetwork.title'),
+      description: t('support.localNetwork.description')
     }
   ];
 
@@ -35,7 +35,7 @@ export const SupportSection = () => {
             {t('support.subtitle')}
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {supportFeatures.map((feature, index) => (
             <Card key={index} className="text-center border-0 shadow-soft bg-gradient-cherry">
@@ -53,24 +53,23 @@ export const SupportSection = () => {
             </Card>
           ))}
         </div>
-        
+
         {/* Success Stories Gallery */}
-        <StudentsSection showFilters={true} maxStudents={8} showTestimonials={true} />
-        
+        <StudentsSection />
+
         {/* Testimonial */}
         <div className="bg-card rounded-2xl p-8 md:p-12 shadow-soft border border-border/50">
           <div className="text-center">
             <blockquote className="text-2xl md:text-3xl font-medium text-mountain-gray mb-6 italic leading-relaxed">
-              "Nihon Moments didn't just help me with paperwork – they helped me build my future. 
-              The personalized guidance and constant support made all the difference."
+              "{t('support.testimonial.quote')}"
             </blockquote>
             <div className="flex items-center justify-center space-x-4">
               <div className="w-12 h-12 bg-gradient-cherry rounded-full flex items-center justify-center">
                 <span className="text-primary font-bold text-lg">Y.S.</span>
               </div>
               <div className="text-left">
-                <p className="font-semibold text-mountain-gray">Yuki Sato</p>
-                <p className="text-muted-foreground">Tokyo University Student</p>
+                <p className="font-semibold text-mountain-gray">{t('support.testimonial.name')}</p>
+                <p className="text-muted-foreground">{t('support.testimonial.role')}</p>
               </div>
             </div>
           </div>
