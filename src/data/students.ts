@@ -7,60 +7,14 @@ import student6 from "@/assets/students/student-6.jpg";
 
 export interface SuccessStory {
   image: string;
-  name: string;
-  country: string;
-  university: string;
-  program: string;
-  testimonial: string;
+  i18nKey: string;
 }
 
 export const successStories: SuccessStory[] = [
-  {
-    image: student1,
-    name: "Sakura Tanaka",
-    country: "Japan",
-    university: "Tokyo University",
-    program: "Computer Science",
-    testimonial: "Nihon Moments made my dream of studying at Tokyo University a reality. The personalized guidance was incredible!"
-  },
-  {
-    image: student2,
-    name: "Michael Chen",
-    country: "Singapore",
-    university: "Waseda University",
-    program: "International Relations",
-    testimonial: "The application process was smooth and stress-free thanks to their expert guidance."
-  },
-  {
-    image: student3,
-    name: "Emily Rodriguez",
-    country: "Philippines",
-    university: "Keio University",
-    program: "Business Administration",
-    testimonial: "From application to arrival, they supported me every step of the way."
-  },
-  {
-    image: student4,
-    name: "David Kim",
-    country: "South Korea",
-    university: "Osaka University",
-    program: "Engineering",
-    testimonial: "The interview preparation was invaluable. I felt confident and well-prepared."
-  },
-  {
-    image: student5,
-    name: "Anna Sato",
-    country: "Malaysia",
-    university: "Kyoto University",
-    program: "Cultural Studies",
-    testimonial: "They helped me understand Japanese culture and academic expectations perfectly."
-  },
-  {
-    image: student6,
-    name: "James Wilson",
-    country: "United Kingdom",
-    university: "Sophia University",
-    program: "Japanese Literature",
-    testimonial: "The COE process was handled professionally. I couldn't have done it without them."
-  }
+  { image: student1, i18nKey: "students.sakura" },
+  { image: student2, i18nKey: "students.michael" },
+  { image: student3, i18nKey: "students.emily" },
+  { image: student4, i18nKey: "students.david" },
+  { image: student5, i18nKey: "students.anna" },
+  { image: student6, i18nKey: "students.james" },
 ];

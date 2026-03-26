@@ -19,7 +19,7 @@ export const StudentsSection = () => {
         <div className="aspect-square overflow-hidden relative">
           <img
             src={imageError ? defaultImage : (story.image || defaultImage)}
-            alt={`${story.name} - ${story.university} student`}
+            alt={`${t(`${story.i18nKey}.name`)} - ${t(`${story.i18nKey}.university`)} student`}
             className="w-full h-full object-cover transition-transform group-hover:scale-105"
             onError={() => setImageError(true)}
           />
@@ -27,18 +27,18 @@ export const StudentsSection = () => {
         </div>
         <CardContent className="p-4">
           <h4 className="font-semibold text-mountain-gray text-center mb-1">
-            {story.name}
+            {t(`${story.i18nKey}.name`)}
           </h4>
           <div className="flex items-center justify-center text-sm text-muted-foreground mb-1">
             <GraduationCap className="w-3 h-3 mr-1" />
-            {story.university}
+            {t(`${story.i18nKey}.university`)}
           </div>
           <p className="text-xs text-muted-foreground text-center mb-2">
-            {story.program}
+            {t(`${story.i18nKey}.program`)}
           </p>
           <div className="flex items-center justify-center text-xs text-muted-foreground">
             <MapPin className="w-3 h-3 mr-1" />
-            {story.country}
+            {t(`${story.i18nKey}.country`)}
           </div>
         </CardContent>
       </Card>
@@ -59,14 +59,14 @@ export const StudentsSection = () => {
         <DialogContent className="max-w-2xl">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-mountain-gray">
-              {story.name}
+              {t(`${story.i18nKey}.name`)}
             </DialogTitle>
           </DialogHeader>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <img
                 src={imageError ? defaultImage : (story.image || defaultImage)}
-                alt={story.name}
+                alt={t(`${story.i18nKey}.name`)}
                 className="w-full h-64 object-cover rounded-lg"
                 onError={() => setImageError(true)}
               />
@@ -78,17 +78,17 @@ export const StudentsSection = () => {
                   <div className="flex items-center">
                     <GraduationCap className="w-4 h-4 mr-2 text-primary" />
                     <span className="font-medium">{t('studentDetail.university')}:</span>
-                    <span className="ml-2">{story.university}</span>
+                    <span className="ml-2">{t(`${story.i18nKey}.university`)}</span>
                   </div>
                   <div className="flex items-center">
                     <GraduationCap className="w-4 h-4 mr-2 text-primary" />
                     <span className="font-medium">{t('studentDetail.program')}:</span>
-                    <span className="ml-2">{story.program}</span>
+                    <span className="ml-2">{t(`${story.i18nKey}.program`)}</span>
                   </div>
                   <div className="flex items-center">
                     <MapPin className="w-4 h-4 mr-2 text-primary" />
                     <span className="font-medium">{t('studentDetail.country')}:</span>
-                    <span className="ml-2">{story.country}</span>
+                    <span className="ml-2">{t(`${story.i18nKey}.country`)}</span>
                   </div>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export const StudentsSection = () => {
               <div>
                 <h3 className="font-semibold text-lg text-mountain-gray mb-2">{t('studentDetail.testimonial')}</h3>
                 <blockquote className="text-sm italic text-muted-foreground border-l-2 border-primary pl-4">
-                  "{story.testimonial}"
+                  "{t(`${story.i18nKey}.testimonial`)}"
                 </blockquote>
               </div>
             </div>

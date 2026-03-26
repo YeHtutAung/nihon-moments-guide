@@ -33,7 +33,7 @@ export const GreetingSection = () => {
             <div className="w-64 h-80 sm:w-72 sm:h-96 lg:w-80 lg:h-96 mx-auto lg:mx-0 rounded-lg overflow-hidden shadow-soft mb-3 bg-gray-50 relative">
               <img
                 src={companyLeader.image}
-                alt={`${companyLeader.name} - ${companyLeader.title}`}
+                alt={`${companyLeader.name} - ${t('greeting.ceoTitle')}`}
                 className="absolute inset-0 w-full h-full object-cover object-[center_10%]"
                 loading="lazy"
                 decoding="async"
@@ -45,7 +45,7 @@ export const GreetingSection = () => {
                 {companyLeader.name}
               </h3>
               <p className="text-sm text-muted-foreground text-center lg:text-left">
-                {companyLeader.title}
+                {t('greeting.ceoTitle')}
               </p>
             </div>
           </div>
@@ -57,9 +57,9 @@ export const GreetingSection = () => {
                 {t('greeting.title')}
               </h2>
               <div className="text-lg text-muted-foreground leading-relaxed space-y-3">
-                <p>{companyLeader.message.greeting}</p>
-                <p>{companyLeader.message.vision}</p>
-                <p>{companyLeader.message.commitment}</p>
+                <p>{t('greeting.message.greeting')}</p>
+                <p>{t('greeting.message.vision')}</p>
+                <p>{t('greeting.message.commitment')}</p>
               </div>
             </div>
 

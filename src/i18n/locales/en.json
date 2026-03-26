@@ -1,6 +1,12 @@
 {
   "greeting": {
     "title": "A Message from Our CEO",
+    "ceoTitle": "Chief Executive Officer",
+    "message": {
+      "greeting": "Welcome to Nihon Moments! As the CEO of this company, I am honored to share our vision and mission with you, our future students and partners in this incredible journey to Japan.",
+      "vision": "Our company was founded with a simple yet powerful belief: every student deserves the opportunity to pursue their dreams of studying in Japan, regardless of their background or circumstances.",
+      "commitment": "At Nihon Moments, we don't just provide services; we build relationships. We believe in the power of personalized guidance, cultural understanding, and unwavering support."
+    },
     "vision": {
       "title": "Our Vision",
       "description": "To be the most trusted and comprehensive partner for international students pursuing education in Japan, fostering global connections and cultural exchange."
@@ -23,7 +29,23 @@
   },
   "services": {
     "title": "Our Core Services",
-    "subtitle": "We make the process of studying in Japan smooth and stress-free, providing comprehensive support at every stage of your journey."
+    "subtitle": "We make the process of studying in Japan smooth and stress-free, providing comprehensive support at every stage of your journey.",
+    "applicationGuidance": {
+      "title": "Application Guidance",
+      "description": "Navigate the complex application process with our expert guidance. We help you prepare all necessary documents, meet deadlines, and present your best self to Japanese institutions."
+    },
+    "coe": {
+      "title": "Certificate of Eligibility (COE)",
+      "description": "We streamline the COE application process, handling all the paperwork and coordination with Japanese immigration authorities to ensure a smooth and successful application."
+    },
+    "interviewPrep": {
+      "title": "Interview Preparation",
+      "description": "Build confidence with our comprehensive interview coaching. We provide mock interviews, cultural insights, and personalized feedback to help you excel in your admissions interviews."
+    },
+    "partTimeJob": {
+      "title": "Part-time Job",
+      "description": "We offer newspaper delivery opportunities for students in Japan. This door-to-door service provides flexible hours and helps you earn while studying. Perfect for students looking to support their living expenses."
+    }
   },
   "support": {
     "title": "Why Choose Nihon Moments?",
@@ -48,6 +70,50 @@
       "quote": "Nihon Moments didn't just help me with paperwork – they helped me build my future. The personalized guidance and constant support made all the difference.",
       "name": "Yuki Sato",
       "role": "Tokyo University Student"
+    }
+  },
+  "students": {
+    "sakura": {
+      "name": "Sakura Tanaka",
+      "country": "Japan",
+      "university": "Tokyo University",
+      "program": "Computer Science",
+      "testimonial": "Nihon Moments made my dream of studying at Tokyo University a reality. The personalized guidance was incredible!"
+    },
+    "michael": {
+      "name": "Michael Chen",
+      "country": "Singapore",
+      "university": "Waseda University",
+      "program": "International Relations",
+      "testimonial": "The application process was smooth and stress-free thanks to their expert guidance."
+    },
+    "emily": {
+      "name": "Emily Rodriguez",
+      "country": "Philippines",
+      "university": "Keio University",
+      "program": "Business Administration",
+      "testimonial": "From application to arrival, they supported me every step of the way."
+    },
+    "david": {
+      "name": "David Kim",
+      "country": "South Korea",
+      "university": "Osaka University",
+      "program": "Engineering",
+      "testimonial": "The interview preparation was invaluable. I felt confident and well-prepared."
+    },
+    "anna": {
+      "name": "Anna Sato",
+      "country": "Malaysia",
+      "university": "Kyoto University",
+      "program": "Cultural Studies",
+      "testimonial": "They helped me understand Japanese culture and academic expectations perfectly."
+    },
+    "james": {
+      "name": "James Wilson",
+      "country": "United Kingdom",
+      "university": "Sophia University",
+      "program": "Japanese Literature",
+      "testimonial": "The COE process was handled professionally. I couldn't have done it without them."
     }
   },
   "studentDetail": {

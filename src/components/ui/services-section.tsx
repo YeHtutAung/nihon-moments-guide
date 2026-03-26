@@ -26,11 +26,13 @@ export const ServicesSection = () => {
                   <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     <IconComponent className="w-8 h-8 text-primary" />
                   </div>
-                  <CardTitle className="text-2xl text-mountain-gray">{service.title}</CardTitle>
+                  <CardTitle className="text-2xl text-mountain-gray">
+                    {t(`${service.i18nKey}.title`)}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base leading-relaxed text-center">
-                    {service.description}
+                    {t(`${service.i18nKey}.description`)}
                   </CardDescription>
                 </CardContent>
               </Card>
